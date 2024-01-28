@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.unclickable {
+ pointer-events: none;
+}

@@ -1,12 +1,16 @@
 import { FaStar } from "react-icons/fa6";
 
-function Rate(){
- return <div className="flex justify-center mb-3">
-<FaStar className="text-amber-500 size-6"/>
-<FaStar className="text-amber-500 size-6"/>
-<FaStar className="text-amber-500 size-6"/>
-<FaStar className="text-amber-500 size-6"/>
-<FaStar className="text-amber-500 size-6"/>
+function Rate({handleRating, rating , review }){
+ return <div className="flex mb-3">
+  {Array.from({length:5}, (_, i) => (
+ <FaStar key={i} onClick={() => handleRating(i)} className={
+  (review && review.rate >= i + 1) || (!review && rating >= i + 1)
+    ? "text-amber-500 size-6"
+    : "text-gray-400 size-6"
+}/>
+  )
+   
+  )}
  </div>
 }
 
