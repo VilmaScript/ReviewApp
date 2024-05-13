@@ -6,7 +6,7 @@ function Rate({handleRating, rating , review }){
  <FaStar key={i} onClick={() => handleRating(i)} className={
   (review && review.rate >= i + 1) || (!review && rating >= i + 1)
     ? "text-amber-500 size-6"
-    : "text-gray-400 size-6"
+    : "text-gray-200 size-6"
 }/>
   )
    

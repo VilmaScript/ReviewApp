@@ -2,7 +2,7 @@ import FormComponent from "../components/FormComponent"
 
 function AddReviews(){
  return <div>
-  <div className="flex justify-between px-3 py-3">
+  <div className="flex justify-between px-3 py-3 bg-violet-900">
    <h2 className="text-violet-100 text-xl">Rate & Share</h2>
    <button className="text-violet-300">Cancel</button>
   </div>

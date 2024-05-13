@@ -4,7 +4,7 @@ import ReviewPageHeader from "../ui/ReviewPageHeader"
 
 function Reviews(){
 
- return <div>
+ return <div className="bg-violet-900">
  <ReviewPageHeader/>
  <ReviewComponent/>
 </div>

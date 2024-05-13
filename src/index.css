@@ -5,3 +5,23 @@
 .unclickable {
  pointer-events: none;
 }
+
+.comment-box {
+    position: relative;  
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .comment-box::after {
+    content: '';
+    position: absolute;
+    bottom: -7px; /* Adjust the distance from the top edge */
+    left:10%; /* Position the tip at the center */
+    width: 15px; /* Width of the tip */
+    height: 15px; /* Height of the tip */
+    background-color: inherit; /* Match the background color of the comment box */
+    border-bottom: none;
+   /* Round the corners to match the comment box */
+    transform: translateX(-50%) rotate(45deg); /* Rotate the element to create the tip */
+  }
+  

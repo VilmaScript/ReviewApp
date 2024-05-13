@@ -26,8 +26,6 @@ function AppLayout(){
         </li>
       </ul>
     </nav>
-
-   
  
     <Outlet />
   </>

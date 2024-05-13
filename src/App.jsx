@@ -6,6 +6,8 @@ import AddReviews from "./pages/AddReviews";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import Notification from "./pages/Notification";
+import SignInUp from "./pages/SignInUp";
+import AboutMe from "./pages/AboutMe";
 
 function App (){
 return <div className="relative">
@@ -18,6 +20,8 @@ return <div className="relative">
 <Route path="profile" element={<Profile/>} />
 <Route path="search" element={<Search/>} />
 </Route>
+<Route path="about-me" element={<AboutMe />} />
+<Route path="sign-in" element={<SignInUp />} />
 <Route path="*" element={<PageNotFound />} />
  </Routes>
 </BrowserRouter>
