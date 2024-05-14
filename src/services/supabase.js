@@ -4,3 +4,5 @@ import { createClient } from '@supabase/supabase-js';
  const supabase = createClient(projectUrl, apiKey);
 
  export default supabase
+
+ 

@@ -7,9 +7,11 @@ import myContext from '../context/myContext'
 import { useMutation } from '@tanstack/react-query';
 import { uploadProfileData, uploadReview } from '../services/uploadService';
 import { handleImageUpload } from '../services/imageService';
+import MyContext from '../context/myContext';
 
 function AboutMe(){
   const {userId} = useContext(myContext)
+  console.log(userId)
   const [disable, setDisabled] = useState(false)
   const [name, setName] = useState()
   const [photoOne, setPhotoOne] = useState(null)
@@ -21,6 +23,7 @@ function AboutMe(){
  const navigate = useNavigate()
 
  function handleFileChangeOne(e){
+
   const photoFile = e.target.files[0]
   setPhotoOne(photoFile.name)
   setPhotoFileOne(photoFile)
@@ -52,7 +55,7 @@ const handleSubmit = async (e) => {
   console.log(photoFileOne.name)
   console.log(photoFileTwo.name)
 // Call upload review mutation fn
-  uploadProfileData({ name, bio ,photoFileOne, photoFileTwo});
+  uploadProfileData({ name, bio ,photoFileOne, photoFileTwo, userId });
   
 //call upload image mutationFn
 uploadImageMutation({photoFileOne, photoFileTwo})

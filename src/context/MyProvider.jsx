@@ -17,6 +17,7 @@ function MyProvider({ children }) {
   const { data: profileData } = useProfile(userId)
   const [search, setSearch] = useState(null)
  
+
   const updateUserId = (usersId) => {
     setUserId(usersId)
   }

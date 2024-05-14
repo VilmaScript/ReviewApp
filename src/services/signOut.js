@@ -1,11 +1,13 @@
 import supabase from "./supabase";
 
-export async function getTheUser() {
+export async function signOut() {
  try {
-    const { data } = await supabase.auth.getUser();
-   
-   return data;
+    const { error } = await supabase.auth.signOut()
+ 
+    return error
+
  } catch (error) {
    console.error("An unexpected error occurred:", error);
  }
 }
+

@@ -8,12 +8,13 @@ import Search from "./pages/Search";
 import Notification from "./pages/Notification";
 import SignInUp from "./pages/SignInUp";
 import AboutMe from "./pages/AboutMe";
+import ProtectedRoutes from "./components/protectedRoutes";
 
 function App (){
 return <div className="relative">
 <BrowserRouter>
 <Routes>
-<Route path="/" element={<AppLayout/>} >
+<Route path="/" element={<ProtectedRoutes><AppLayout/></ProtectedRoutes>} >
 <Route index element={<Reviews/>} />
 <Route path="add-reviews" element={<AddReviews/>} />
 <Route path="notification" element={<Notification/>} />

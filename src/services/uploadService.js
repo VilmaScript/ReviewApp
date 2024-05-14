@@ -30,7 +30,7 @@ export const uploadReview = async ({reviewTitle, locationCategory, rating, profi
     
   }
  };
-export const uploadProfileData = async ({name,bio, photoFileOne, photoFileTwo}) => {
+export const uploadProfileData = async ({name,bio, photoFileOne, photoFileTwo, userId}) => {
     const projectUrl = 'https://qyhemyljfotujmxntqqd.supabase.co'
     const photo1 = photoFileOne.name
     const photo2 = photoFileTwo.name
@@ -45,7 +45,8 @@ export const uploadProfileData = async ({name,bio, photoFileOne, photoFileTwo}) 
          fullname : name,
          profile_bio: bio,
           profilepic: imageUrlOne,
-          profilebanner : imageUrlTwo
+          profilebanner : imageUrlTwo,
+          userId: userId
         },
       ])
       .select();
