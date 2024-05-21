@@ -6,7 +6,6 @@ export const fetchProfileDetails = async (userId) => {
      .select('*')
      .eq('userId', userId);
    
-     console.log(data)
        return data
        
     } catch (error) {

@@ -1,23 +1,17 @@
-
 import { Navigate } from "react-router-dom";
-import { useGetUser } from "../hooks/useGetUser";
+import { useAuth } from "../context/AuthProvider";
 
-function ProtectedRoutes ({ children }) {
-    const { data } = useGetUser();
 
-    // Destructure the user object from data once it's available
-    const { user } = data || {};
+function ProtectedRoutes({ children }) {
 
-    // If user data is not available, you can handle it appropriately
-    if (!user?.role === 'authenicated') {
-        return <Navigate to="/sign-in" />;
-    }
+  const { user, authLoading } = useAuth();
 
-    // Now you can use the user object in your component
-    console.log(user);
+  if (!user && !authLoading) {
+    return <Navigate to="/sign-in" />;
+  }
 
-    return children;
-}
+  return children;
+};
 
 export default ProtectedRoutes;
 

@@ -6,8 +6,8 @@ function ReviewHeader({review}){
     const timeAgo = formatDistanceToNow(new Date(time), { addSuffix: true });
  return <> <div className="flex justify-between px-3 py-3 items-center">
   <div className="flex">
-  <img src={review?.profilepic} alt="profile-picture" className="rounded-full size-10 bg-cover object-cover bg-center"/>
-   <div className="ml-1.5"><p className="text-sm">{review?.name}</p>
+  <img src={review?.profilepic} alt="profile-picture" className="border-2 border-amber-500 rounded-full size-10 bg-cover object-cover bg-center"/>
+   <div className="ml-1.5"><p className="text-sm font-medium">{review?.name}</p>
    <small >{timeAgo}</small></div>
   </div>
   <HiDotsHorizontal/>

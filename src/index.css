@@ -16,7 +16,7 @@
     content: '';
     position: absolute;
     bottom: -7px; /* Adjust the distance from the top edge */
-    left:10%; /* Position the tip at the center */
+    right:10%; /* Position the tip at the center */
     width: 15px; /* Width of the tip */
     height: 15px; /* Height of the tip */
     background-color: inherit; /* Match the background color of the comment box */
@@ -24,4 +24,36 @@
    /* Round the corners to match the comment box */
     transform: translateX(-50%) rotate(45deg); /* Rotate the element to create the tip */
   }
+
+  @keyframes fill {
+    0% {
+      color: transparent;
+    }
+    100% {
+      color: #fbbf24;
+    }
+  }
   
+  .fill-amber-animation {
+    animation: fill 0.5s ease-in-out;
+  }
+  
+  .pop-button:active {
+    animation: pop 0.1s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+  
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -5,7 +5,7 @@ function Rate({handleRating, rating , review }){
   {Array.from({length:5}, (_, i) => (
  <FaStar key={i} onClick={() => handleRating(i)} className={
   (review && review.rate >= i + 1) || (!review && rating >= i + 1)
-    ? "text-amber-500 size-6"
+    ? "text-amber-500 size-6  fill-amber-animation"
     : "text-gray-200 size-6"
 }/>
   )

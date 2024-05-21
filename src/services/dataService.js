@@ -3,8 +3,8 @@ import supabase from "./supabase";
 //fetch data
  export const fetchData = async () => {
  try {
-  const { data } = await supabase.from('reviews').select('*').order('created_at', { ascending: false }); ;
-  console.log(data)
+  const { data } = await supabase.from('reviews').select('*').order('created_at', { ascending: false }); 
+  
     return data
     
  } catch (error) {
@@ -30,8 +30,9 @@ import supabase from "./supabase";
  try {
   const { data } = await supabase.from('reviews')
   .select('*')
+  .order('created_at', { ascending: false })
   .eq('usersId', userId);
-  console.log(data)
+  
     return data
     
  } catch (error) {
@@ -43,7 +44,7 @@ import supabase from "./supabase";
   const { data } = await supabase.from('notifications')
   .select('*')
   .eq('recieverId', userId);
-  console.log(data)
+
     return data
     
  } catch (error) {

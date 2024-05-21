@@ -20,7 +20,9 @@ export const uploadReview = async ({reviewTitle, locationCategory, rating, profi
           locationName: reviewTitle,
           rate: rating,
           img_one: imageUrlOne,
-          img_two : imageUrlTwo
+          img_two : imageUrlTwo,
+          likes : 5,
+          dislikes:3
         },
       ])
       .select();

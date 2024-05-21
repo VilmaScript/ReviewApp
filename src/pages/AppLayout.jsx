@@ -8,7 +8,7 @@ function AppLayout(){
  return (
   <>
     <nav className='fixed left-0 right-0 bottom-0 rounded-t-lg'>
-      <ul className='flex justify-around rounded-t-lg items-center bg-violet-50 py-3 '>
+      <ul className='flex justify-around rounded-t-lg items-center bg-violet-50 dark:bg-slate-800 py-3 '>
         <li>
           <Link to="/"><VscPreview className='size-5 text-violet-400'/></Link>
         </li>

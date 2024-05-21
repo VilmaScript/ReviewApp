@@ -21,31 +21,31 @@ function Search() {
   }
 
   return (
-    <div className="text-center ">
+    <div className="text-center">
       <div className="mb-4 py-4">
       <img
         src="/img8.png"
         className="rounded-full w-44 h-44 m-auto"
         alt="search here"
       />
-      <h2 className="text-xl text-gray-700 mb-3">
+      <h2 className="text-xl text-gray-700  dark:text-white mb-3">
         Search for reviews & ratings
       </h2>
-      <div className="relative">
+      <div className="relative w-4/5 m-auto">
         <input
           type="text"
-          className="w-4/5 bg-violet-50 rounded-full"
+          className="w-full bg-violet-50 px-2 py-1.5 dark:text-violet-50 dark:bg-slate-900 rounded-full"
           onChange={handleChange}
         />
         <IoSearchCircle
-          className="absolute end-11 top-0.5 text-xl text-gray-700"
+          className="absolute right-11 top-1.5 text-xl dark:text-slate-700 text-gray-700 "
           onClick={handleClick}
         />
         </div>
       </div>
     <div className="">
       {inputValue !== '' && search?.map((review) => (
-        <div key={review.id} className="bg-gray-100 mx-3.5 mb-2 rounded-lg px-3 py-3 ">
+        <div key={review.id} className="bg-gray-100 dark:bg-slate-900 dark:text-white mx-3.5 mb-4 rounded-lg px-3 py-3 ">
           {review && (<> <ReviewHeader review={review} />
             <div className="unclickable flex justify-center">
               <Rate review={review} />

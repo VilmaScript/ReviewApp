@@ -3,10 +3,14 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { signOut } from "../services/signOut";
 import { Navigate } from "react-router-dom";
 import MyContext from "../context/myContext";
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../context/AuthProvider";
 
 function ReviewPageHeader(){
  const [isOpen, setIsOpen] = useState(false)
  const { updateUserId} = useContext(MyContext)
+ const {setUser}  = useAuth()
+ const navigate = useNavigate();
 
 
  function handleClick(){
@@ -22,6 +26,8 @@ function ReviewPageHeader(){
     } else {
       console.log("User signed out successfully");
       updateUserId(null)
+      setUser(null)
+      navigate('/sign-in');
     }
   };
 
@@ -33,7 +39,7 @@ function ReviewPageHeader(){
   <div>
   <HiMenuAlt3 onClick={handleClick} />
   <div className="relative">
-    <button onClick={handleSignOut} className={`bg-white text-amber-600 whitespace-nowrap  shadow-md shadow-amber  text-sm p-1.5 absolute right-5 rounded   ${!isOpen ? `hidden` : ''}`}>Sign out</button>
+    <button onClick={handleSignOut} className={`bg-white dark:text-violet-200 dark:bg-slate-900 text-amber-600 whitespace-nowrap shadow-md shadow-amber  text-sm p-1.5 absolute right-5 rounded   ${!isOpen ? `hidden` : ''}`}>Sign out</button>
   </div>
   </div>
  
