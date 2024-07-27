@@ -28,7 +28,7 @@ function Notification() {
   }
 
   
-  return <div className="dark:text-white ">
+  return <div className="dark:text-white">
     <h2 className="p-3 text-xl text-violet-50 bg-violet-900">Notifications </h2>
     <NotificationAlert notificationData={notificationData} profileData={profileData} />
   </div>

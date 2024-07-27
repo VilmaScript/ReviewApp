@@ -40,7 +40,7 @@ function AboutMe() {
   })
   const handleSubmit = async (e) => {
     e.preventDefault()
-    navigate('/sign-in')
+    navigate('/back-to-signin')
 
     // Call upload review mutation fn
     uploadProfileData({ name, bio, photoFileOne, photoFileTwo, userId });

@@ -41,14 +41,15 @@ function SignInUp() {
       }
     },
   })
-  return <div className="bg-white h-screen">
+  return <div className="bg-white h-screen flex items-center justify-center ">
+    <div className=" shadow-lg rounded ">
     <div className="px-5 pt-5 flex flex-col">
       <button className={isSignUp ? `${buttonClass} text-gray-400 ` : `${buttonClass} text-purple-900`} onClick={() => setIsSignUp(false)}>Sign In</button>
       <p className="m-auto mt-1 text-amber-500 font-thin">Or</p>
       <button className={!isSignUp ? `${buttonClass} text-gray-400` : `${buttonClass} text-purple-900`} onClick={() => setIsSignUp(true)}>Sign Up</button>
     </div>
 
-    <form onSubmit={formik.handleSubmit} className="py-5 px-5">
+    <form onSubmit={formik.handleSubmit} className="py-5 px-5 ">
       <div className="py-3">
         <label htmlFor="email" className=" font-medium">Email</label>
         <input
@@ -65,9 +66,9 @@ function SignInUp() {
       </div>
 
       <div className="py-3">
-        <label htmlFor="password" className="font-medium">Password</label>
+        <label htmlFor="password" type="password" className="font-medium">Password</label>
         <input
-          type="text"
+          type="password"
           id="password"
           name="password"
           placeholder={isSignUp ? `Enter a strong password` : `Enter your password`}
@@ -82,7 +83,7 @@ function SignInUp() {
       {isSignUp ? <div className="py-3">
         <label htmlFor="confirm-password " className="font-medium">Confirm Password</label>
         <input
-          type="text"
+          type="password"
           id="confirmPassword"
           name="confirmPassword"
           placeholder="confirm password"
@@ -96,6 +97,8 @@ function SignInUp() {
 
       <button type="submit" className="bg-violet-900 w-full text-white px-3 py-1.5 rounded-full mt-5">{isSignUp ? `Sign Up` : `Sign In`}</button>
     </form>
+    </div>
+    
   </div>
 }
 

@@ -27,8 +27,7 @@ function FormComponent() {
 
   const profilePicture = profileData[0].profilepic
   const profileName = profileData[0].fullname
-  console.log(profileData, profilePicture, profileName)
-
+  
   //Mutation for uploading reviews
   const { isLoading, mutate: uploadReviewMutation } = useMutation({
     mutationFn: uploadReview,

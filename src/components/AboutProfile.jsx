@@ -9,7 +9,7 @@ function AboutProfile({ profileData }) {
   return <div className="bg-violet-50 dark:bg-slate-800 dark:text-white text-center px-4 mb-4">
     <div className="flex items-center justify-center">
       <h2 className="text-lg mt-3 font-medium ">{profileData[0].fullname}</h2>
-      {darkMode ? <IoIosSunny className=" text-2xl text-amber-500" onClick={() => setDarkMode(!darkMode)} />
+      {darkMode ? <IoIosSunny className=" sm:hidden text-2xl text-amber-500" onClick={() => setDarkMode(!darkMode)} />
         : <MdDarkMode className="text-2xl text-gray-800" onClick={() => setDarkMode(!darkMode)} />}
     </div>
 

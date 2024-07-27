@@ -14,7 +14,7 @@ function Media({matchinRevData}){
     setIsExpanded(!isExpanded);
   };
 
-    return <div className="p-3 rounded-lg mx-4 my-3 dark:bg-slate-900 pb-10">
+    return <div className="p-3 rounded-lg mx-4 my-3 bg-white dark:bg-slate-900 pb-10">
         <div className="flex justify-between mb-3">
         <p>Media</p>
         {matchinRevData.length > 3 && (
@@ -23,9 +23,9 @@ function Media({matchinRevData}){
         </button>
       )}
         </div>
-        <div className=" grid grid-cols-3 gap-2">
+        <div className=" grid gap-2 grid-cols-3 ">
         {matchinRevData?.slice(0, visibleItemsCount).map((data, i)=>(
-        <img key={i} src={data.img_one} alt="review-photos" className="size-24 object-cover rounded-lg" />
+        <img key={i} src={data.img_one} alt="review-photos" className=" sm:size-52 size-44 lg:size-60 object-cover rounded-lg" />
       ))}
         </div>
     </div>

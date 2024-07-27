@@ -31,14 +31,16 @@ function Reaction({ review, profileData }) {
   const { data: commentData, error } = useQuery({
     queryKey: ["fetchComments", reviewId],
     queryFn: () => fetchComments({ reviewId }),
-    onSuccess: () => {
+    onSuccess: (data) => {
+      setCommentArray(data.map(c => c.comment_text));
+    setCommentPhoto(data.map(c => c.profilepic));
     },
   });
 
   //Mutation for uploading reviews
   const { mutate: uploadCommentMutation } = useMutation({
     mutationFn: uploadComment,
-    onSuccess: (data) => {
+    onSuccess: () => {
     }
   })
 
@@ -153,8 +155,7 @@ function Reaction({ review, profileData }) {
 
   function handleComment() {
     setComment(!comment)
-    setCommentArray(commentData.map(c => c.comment_text));
-    setCommentPhoto(commentData.map(c => c.profilepic));
+    
   }
 
   function handleInput(e) {
@@ -179,7 +180,7 @@ function Reaction({ review, profileData }) {
           <div className="h-20 overflow-auto px-4">
             {commentArray?.map((comment, index) => (
               <div key={index} className="comment-box text-sm dark:bg-slate-800 dark:text-white bg-gray-50 my-8 mx-4 px-3 pb-2 relative" >
-                <p className="text-xs font-medium">{comment}</p>
+                <p className="text-xs font-medium py-2">{comment}</p>
                 <img className="size-7 object-cover rounded-full border-2 border-amber-500 bg-center absolute bottom-8 -left-6" src={commentPhoto[index]} alt="Profile" />
 
               </div>
@@ -202,12 +203,9 @@ function Reaction({ review, profileData }) {
       </div>
       <div>
         <FaCommentDots className="text-violet-300 size-6" onClick={handleComment} />
-        <p className="text-neutral-500 text-xs font-medium">{commentData?.length}</p>
+        <p className="text-neutral-500 text-xs font-medium">{commentArray.length}</p>
       </div>
-      <div>
-        <FaShare className="text-violet-300 size-6" />
-        <p className="text-neutral-500 text-xs font-medium">10</p>
-      </div>
+    
     </div>
   </div>
 

@@ -3,7 +3,6 @@ import MyContext from "../context/myContext"
 import AboutProfile from "../components/AboutProfile"
 import ProfilePic from "../components/ProfilePic"
 import ReviewNumbers from "../ui/ReviewNumbers"
-import Follow from "../ui/follow"
 import LoadingSpinner from "../ui/spinner"
 import { fetchMatchingReviews } from "../services/dataService"
 import { useQuery } from "@tanstack/react-query"
@@ -41,7 +40,7 @@ function Profile() {
   if ( !userId || !profileData || !matchinRevData) {
     return <LoadingSpinner />;
   }
-  return <div className="bg-violet-50 dark:bg-slate-800 dark:text-white ">
+  return <div className="bg-violet-50 h-full dark:bg-slate-800 dark:text-white pb-4">
     <ProfilePic userId={userId} profileData={profileData} />
     <AboutProfile userId={userId} profileData={profileData} />
     <ReviewNumbers matchinRevData={matchinRevData}  toggleVisibility={toggleVisibility} isExpanded={isExpanded}/>
@@ -60,8 +59,7 @@ function Profile() {
 
       </div>
     ))}
-    <Follow follow={`followers`} number={334} />
-    <Follow follow={`following`} number={224} />
+    
     <Media matchinRevData={matchinRevData}/>
   </div>
 }

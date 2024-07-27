@@ -19,10 +19,10 @@ function Images({review}){
 
  return  <><div className="grid grid-cols-3 gap-4 ">
   <div  className="col-span-2 ">
-  <img onClick={() => handleImageClick(review?.img_one)}  className="h-32 w-full object-cover rounded-md" src={review?.img_one} alt="Uploaded Image" />
+  <img onClick={() => handleImageClick(review?.img_one)}  className="h-44 md:h-60 w-full object-cover rounded-md" src={review?.img_one} alt="Uploaded Image" />
   </div>
   <div >
-  <img onClick={() => handleImageClick(review?.img_two)} className="h-32 w-full object-cover rounded-md"  src={review?.img_two} alt="pizza" />
+  <img onClick={() => handleImageClick(review?.img_two)} className="h-44 md:h-60 w-full object-cover rounded-md"  src={review?.img_two} alt="pizza" />
   </div>
  </div>
  <Modal isOpen={isModalOpen} imageSrc={selectedImage} onClose={handleCloseModal} />

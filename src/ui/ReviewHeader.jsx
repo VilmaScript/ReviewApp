@@ -1,4 +1,3 @@
-import { HiDotsHorizontal } from "react-icons/hi";
 import { formatDistanceToNow } from 'date-fns';
 
 function ReviewHeader({review}){
@@ -10,7 +9,6 @@ function ReviewHeader({review}){
    <div className="ml-1.5"><p className="text-sm font-medium">{review?.name}</p>
    <small >{timeAgo}</small></div>
   </div>
-  <HiDotsHorizontal/>
  </div>
  <h3 className=" text-center text-2xl mb-3 font-bold">{review?.locationName}</h3>
  </>

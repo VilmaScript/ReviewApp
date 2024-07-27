@@ -9,6 +9,7 @@ import Notification from "./pages/Notification";
 import SignInUp from "./pages/SignInUp";
 import AboutMe from "./pages/AboutMe";
 import ProtectedRoutes from "./components/protectedRoutes";
+import BackToSignIn from "./pages/BackToSignIn";
 
 function App (){
 return <div className="relative">
@@ -23,6 +24,7 @@ return <div className="relative">
 </Route>
 <Route path="about-me" element={<AboutMe />} />
 <Route path="sign-in" element={<SignInUp />} />
+<Route path="back-to-signin" element={<BackToSignIn />} />
 <Route path="*" element={<PageNotFound />} />
  </Routes>
 </BrowserRouter>
